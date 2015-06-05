@@ -1,5 +1,7 @@
 package com.guillaume.bees.shared;
 
+import java.io.Serializable;
+
 /**
  * Copyright 2015 Guillaume Rebesche
  *
@@ -13,7 +15,7 @@ package com.guillaume.bees.shared;
  * or implied. See the License for the specific language governing permissions and limitations under
  * the License.
  */
-public class UserDTO {
+public class UserDTO implements Serializable {
 
   private Long id;
   private String firstName;

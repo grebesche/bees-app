@@ -1,5 +1,6 @@
 package com.guillaume.bees.shared;
 
+import java.io.Serializable;
 import java.util.Date;
 import java.util.HashSet;
 import java.util.Set;
@@ -17,7 +18,7 @@ import java.util.Set;
  * or implied. See the License for the specific language governing permissions and limitations under
  * the License.
  */
-public class BeesEventDTO {
+public class BeesEventDTO implements Serializable{
 
   private Long id;
   private Date creationDate;

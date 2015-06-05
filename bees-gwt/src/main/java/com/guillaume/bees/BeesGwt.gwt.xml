@@ -6,7 +6,7 @@
   <inherits name="com.vaadin.components.gwt.polymer.PolymerElements"/>
   <inherits name="org.fusesource.restygwt.RestyGWT"/>
 
-  <entry-point class='com.guillaume.bees.gwt.client.BeesGwt'/>
+  <entry-point class='com.guillaume.bees.client.BeesGwt'/>
 
   <source path="client"/>
   <source path="shared"/>

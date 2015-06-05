@@ -1,5 +1,7 @@
 package com.guillaume.bees.server;
 
+import com.guillaume.bees.server.filter.CORSFilter;
+import com.guillaume.bees.server.serialize.JacksonContextResolver;
 import com.guillaume.bees.server.servlet.BeesEventServlet;
 
 import java.util.HashSet;
@@ -25,7 +27,16 @@ public class JerseyApplication extends Application {
   @Override
   public Set<Class<?>> getClasses() {
     Set<Class<?>> classes = new HashSet<>();
+
+    // filters
+    classes.add(CORSFilter.class);
+
+    // serlvets
     classes.add(BeesEventServlet.class);
+
+    // serialization
+    classes.add(JacksonContextResolver.class);
+
     return classes;
   }
 }

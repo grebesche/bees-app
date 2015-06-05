@@ -27,7 +27,6 @@ public class BeesEvent {
   Date creationDate;
   String name;
   String description;
-  @Container
   User author;
 
   public BeesEvent() {

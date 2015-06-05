@@ -1,7 +1,8 @@
-package com.guillaume.bees.gwt.client.rest;
+package com.guillaume.bees.client.rest;
 
 import com.guillaume.bees.shared.BeesEventDTO;
 
+import org.fusesource.restygwt.client.MethodCallback;
 import org.fusesource.restygwt.client.RestService;
 
 import javax.ws.rs.DELETE;
@@ -23,17 +24,18 @@ import javax.ws.rs.PathParam;
  * or implied. See the License for the specific language governing permissions and limitations under
  * the License.
  */
-@Path("/_ah/spi/v1/event")
+@Path("/event")
 public interface BeesEventAPI extends RestService {
 
   @GET
-  @Path("{id}")
-  public BeesEventDTO getEvent(@PathParam("id") Long id);
+  @Path("event/{id}")
+  void getEvent(@PathParam("id") Long id, MethodCallback<BeesEventDTO> callback);
 
   @POST
-  public BeesEventDTO postEvent(BeesEventDTO event);
+  @Path("event")
+  void postEvent(BeesEventDTO event, MethodCallback<BeesEventDTO> callback);
 
   @DELETE
-  @Path("{id}")
-  public void deleteEvent(@PathParam("id") Long id);
+  @Path("event/{id}")
+  void deleteEvent(@PathParam("id") Long id, MethodCallback<Void> callback);
 }
