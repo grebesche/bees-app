@@ -2,8 +2,8 @@ package com.guillaume.bees.server.service;
 
 import com.googlecode.objectify.Key;
 import com.googlecode.objectify.ObjectifyService;
-import com.guillaume.bees.dto.BeesEventDTO;
-import com.guillaume.bees.dto.UserDTO;
+import com.guillaume.bees.shared.BeesEventDTO;
+import com.guillaume.bees.shared.UserDTO;
 import com.guillaume.bees.server.jdo.BeesEvent;
 import com.guillaume.bees.server.jdo.User;
 

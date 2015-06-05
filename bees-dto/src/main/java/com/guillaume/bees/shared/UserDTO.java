@@ -1,4 +1,4 @@
-package com.guillaume.bees.dto;
+package com.guillaume.bees.shared;
 
 /**
  * Copyright 2015 Guillaume Rebesche

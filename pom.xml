@@ -11,6 +11,7 @@
   <modules>
     <module>bees-dto</module>
     <module>bees-webapp</module>
+    <module>bees-gwt</module>
   </modules>
 
 

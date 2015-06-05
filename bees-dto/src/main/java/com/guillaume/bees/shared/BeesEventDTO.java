@@ -1,4 +1,4 @@
-package com.guillaume.bees.dto;
+package com.guillaume.bees.shared;
 
 import java.util.Date;
 import java.util.HashSet;
