@@ -2,22 +2,16 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0"
          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+
   <parent>
-    <artifactId>bees</artifactId>
+    <artifactId>bees-gwt</artifactId>
     <groupId>com.guillaume.bees</groupId>
     <version>1.0-SNAPSHOT</version>
   </parent>
-  <modelVersion>4.0.0</modelVersion>
-  <packaging>pom</packaging>
 
-  <artifactId>bees-gwt</artifactId>
-
-  <modules>
-    <module>main</module>
-    <module>home</module>
-    <module>edit-event</module>
-    <module>api</module>
-  </modules>
+  <artifactId>home</artifactId>
+  <version>1.0-SNAPSHOT</version>
 
   <dependencies>
     <dependency>
@@ -26,14 +20,5 @@
       <version>1.0-SNAPSHOT</version>
     </dependency>
   </dependencies>
-
-  <repositories>
-    <repository>
-      <id>sonatype-snapshots</id>
-      <url>http://oss.sonatype.org/content/repositories/snapshots</url>
-      <snapshots><enabled>true</enabled></snapshots>
-      <releases><enabled>false</enabled></releases>
-    </repository>
-  </repositories>
 
 </project>
