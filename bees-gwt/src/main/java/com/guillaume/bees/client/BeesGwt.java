@@ -35,7 +35,7 @@ public class BeesGwt implements EntryPoint {
         Resource resource = new Resource("http://localhost:8080/_ah/spi/v1/");
 
         BeesEventAPI beesEventAPI = GWT.create(BeesEventAPI.class);
-        ((RestServiceProxy)beesEventAPI).setResource(resource);
+        ((RestServiceProxy) beesEventAPI).setResource(resource);
 
         beesEventAPI.getEvent(6192449487634432L, new MethodCallback<BeesEventDTO>() {
 
@@ -44,7 +44,7 @@ public class BeesGwt implements EntryPoint {
           }
 
           public void onFailure(Method method, Throwable throwable) {
-            RootPanel.get().add(new Label("Failed! :" +   throwable.getMessage()));
+            RootPanel.get().add(new Label("Failed! :" + throwable.getMessage()));
           }
         });
       }
