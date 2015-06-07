@@ -25,7 +25,7 @@ public class BeesEventDTO implements Serializable{
   private String name;
   private String description;
   private UserDTO author;
-  private Set<UserDTO> participants = new HashSet<UserDTO>();
+  private Set<UserDTO> participants = new HashSet<>();
 
   public Long getId() {
     return id;
