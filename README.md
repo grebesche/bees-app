@@ -1,5 +1,10 @@
-# bees app
+# Bees apps
 
 ### In construction
 
-Web and android application to create simple events.
+Containing:
+
+ - API on Google App Engine using Jersey
+ - Android app
+ - Full web app (GWT, polymer)
+ - Light polymer app to view event and reply to it
