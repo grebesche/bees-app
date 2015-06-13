@@ -4,7 +4,7 @@
 
 Containing:
 
- - API on Google App Engine using Jersey
- - Android app
- - Full web app (GWT, polymer)
- - Light polymer app to view event and reply to it
+ - API on Google App Engine using Jersey (in progress)
+ - Android app (not start)
+ - Full web app with GWT and polymer (in progress)
+ - Light polymer app to view event and reply to it (just started)
