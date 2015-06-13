@@ -3,13 +3,10 @@ package com.guillaume.bees.client;
 import com.google.gwt.event.dom.client.ClickEvent;
 import com.google.gwt.event.dom.client.ClickHandler;
 import com.google.gwt.user.client.ui.HasWidgets;
-import com.google.gwt.user.client.ui.Label;
 
-import com.guillaume.bees.shared.BeesEventDTO;
+import com.guillaume.bees.client.history.BeesLocation;
+import com.guillaume.bees.client.history.HistoryManager;
 import com.vaadin.components.gwt.polymer.client.widget.PaperButton;
-
-import org.fusesource.restygwt.client.Method;
-import org.fusesource.restygwt.client.MethodCallback;
 
 /**
  * Copyright 2015 Guillaume Rebesche
@@ -26,9 +23,9 @@ import org.fusesource.restygwt.client.MethodCallback;
  */
 public class Home {
   public static void go(final HasWidgets container) {
-    container.clear();
 
-    PaperButton button = new PaperButton("button on Home!");
+
+    PaperButton button = new PaperButton("Create Event!");
     button.setRaised(true);
     button.getElement().getStyle().setBackgroundColor("#4285f4");
     button.getElement().getStyle().setColor("#FFFFFF");
@@ -36,7 +33,8 @@ public class Home {
 
     button.addClickHandler(new ClickHandler() {
       public void onClick(ClickEvent event) {
-        API.getBeesEventAPI().getEvent(123L, new MethodCallback<BeesEventDTO>() {
+        HistoryManager.navigateTo(BeesLocation.EDIT_EVENT);
+        /*API.getBeesEventAPI().getEvent(123L, new MethodCallback<BeesEventDTO>() {
           public void onFailure(Method method, Throwable exception) {
 
           }
@@ -44,7 +42,7 @@ public class Home {
           public void onSuccess(Method method, BeesEventDTO response) {
             container.add(new Label(response.getName()));
           }
-        });
+        });*/
       }
     });
 

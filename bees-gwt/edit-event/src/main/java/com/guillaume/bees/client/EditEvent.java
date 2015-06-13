@@ -1,7 +1,12 @@
 package com.guillaume.bees.client;
 
-import com.google.gwt.core.client.EntryPoint;
-import com.google.gwt.user.client.ui.*;
+import com.google.gwt.event.dom.client.ClickEvent;
+import com.google.gwt.event.dom.client.ClickHandler;
+import com.google.gwt.user.client.ui.HasWidgets;
+
+import com.guillaume.bees.client.history.BeesLocation;
+import com.guillaume.bees.client.history.HistoryManager;
+import com.vaadin.components.gwt.polymer.client.widget.PaperButton;
 
 /**
  * Copyright 2015 Guillaume Rebesche
@@ -18,4 +23,17 @@ import com.google.gwt.user.client.ui.*;
  */
 public class EditEvent {
 
+  public static void go(final HasWidgets container) {
+    PaperButton button = new PaperButton("Go big or go HOME");
+    button.setRaised(true);
+    button.getElement().getStyle().setBackgroundColor("#4285f4");
+    button.getElement().getStyle().setColor("#FFFFFF");
+    container.add(button);
+
+    button.addClickHandler(new ClickHandler() {
+      public void onClick(ClickEvent event) {
+        HistoryManager.navigateTo(BeesLocation.HOME);
+      }
+    });
+  }
 }

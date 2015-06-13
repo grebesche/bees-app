@@ -17,6 +17,7 @@
     <module>home</module>
     <module>edit-event</module>
     <module>api</module>
+    <module>core</module>
   </modules>
 
   <dependencies>

@@ -4,6 +4,7 @@
 
   <inherits name='com.google.gwt.user.User'/>
 
+  <inherits name="com.guillaume.bees.Core"/>
   <inherits name="com.guillaume.bees.Home"/>
   <inherits name="com.guillaume.bees.EditEvent"/>
 

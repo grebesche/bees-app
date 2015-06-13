@@ -4,4 +4,7 @@
 
   <inherits name='com.google.gwt.user.User'/>
 
+  <inherits name="com.guillaume.bees.Core"/>
+  <inherits name="com.vaadin.components.gwt.polymer.PolymerElements"/>
+
 </module>
