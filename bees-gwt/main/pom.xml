@@ -13,6 +13,10 @@
   <artifactId>main</artifactId>
   <version>1.0-SNAPSHOT</version>
 
+  <properties>
+    <gwt.version>2.7.0</gwt.version>
+  </properties>
+
   <dependencies>
 
     <dependency>
@@ -29,7 +33,7 @@
     <dependency>
       <groupId>com.google.gwt</groupId>
       <artifactId>gwt-user</artifactId>
-      <version>2.7.0</version>
+      <version>${gwt.version}</version>
     </dependency>
 
   </dependencies>
@@ -39,6 +43,16 @@
       <plugin>
         <groupId>org.codehaus.mojo</groupId>
         <artifactId>gwt-maven-plugin</artifactId>
+        <version>${gwt.version}</version>
+        <configuration>
+          <strict>true</strict>
+          <extraJvmArgs>-Xss1024K -Xmx1024M -XX:MaxPermSize=256M</extraJvmArgs>
+          <logLevel>INFO</logLevel>
+          <jsInteropMode>JS</jsInteropMode>
+          <modules>
+            <module>com.guillaume.bees.client.BeesGwt</module>
+          </modules>
+        </configuration>
         <executions>
           <execution>
             <goals>
@@ -46,17 +60,23 @@
             </goals>
           </execution>
         </executions>
-        <configuration>
-          <runTarget>BeesGwt.html</runTarget>
-          <draftCompile>false</draftCompile>
-          <optimizationLevel>9</optimizationLevel>
-          <jsInteropMode>JS</jsInteropMode>
-          <disableCastChecking>true</disableCastChecking>
-          <disableClassMetadata>true</disableClassMetadata>
-          <enableAssertions>false</enableAssertions>
-          <closureCompiler>true</closureCompiler>
-        </configuration>
       </plugin>
     </plugins>
   </build>
+
+  <repositories>
+    <repository>
+      <id>sonatype-snapshots</id>
+      <url>http://oss.sonatype.org/content/repositories/snapshots</url>
+      <snapshots><enabled>true</enabled></snapshots>
+      <releases><enabled>true</enabled></releases>
+    </repository>
+    <repository>
+      <id>sonatype-snapshots2</id>
+      <url>http://oss.sonatype.org/content/repositories/google-snapshots</url>
+      <snapshots><enabled>true</enabled></snapshots>
+      <releases><enabled>true</enabled></releases>
+    </repository>
+  </repositories>
+
 </project>

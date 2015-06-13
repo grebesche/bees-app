@@ -3,6 +3,7 @@
 <module>
 
   <inherits name='com.google.gwt.user.User'/>
+  <inherits name="com.guillaume.bees.API"/>
   <inherits name="com.vaadin.components.gwt.polymer.PolymerElements"/>
 
   <source path="client"/>

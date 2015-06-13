@@ -10,6 +10,5 @@
   <entry-point class='com.guillaume.bees.client.BeesGwt'/>
 
   <source path="client"/>
-  <source path="shared"/>
 
 </module>

@@ -24,15 +24,19 @@ import org.fusesource.restygwt.client.RestServiceProxy;
  */
 public class API implements EntryPoint {
 
+  private static  BeesEventAPI beesEventAPI;
+
   public void onModuleLoad() {
-    this.setup();
+    setup();
   }
 
-  private void setup() {
-
+  private static void setup() {
     Resource resource = new Resource("http://localhost:8080/_ah/spi/v1/");
-
-    BeesEventAPI beesEventAPI = GWT.create(BeesEventAPI.class);
+    beesEventAPI = GWT.create(BeesEventAPI.class);
     ((RestServiceProxy) beesEventAPI).setResource(resource);
+  }
+
+  public static BeesEventAPI getBeesEventAPI() {
+    return beesEventAPI;
   }
 }

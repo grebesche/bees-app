@@ -1,10 +1,15 @@
 package com.guillaume.bees.client;
 
+import com.google.gwt.event.dom.client.ClickEvent;
+import com.google.gwt.event.dom.client.ClickHandler;
 import com.google.gwt.user.client.ui.HasWidgets;
+import com.google.gwt.user.client.ui.Label;
 
-import com.vaadin.components.gwt.polymer.client.widget.CoreToolbar;
+import com.guillaume.bees.shared.BeesEventDTO;
 import com.vaadin.components.gwt.polymer.client.widget.PaperButton;
-import com.vaadin.components.gwt.polymer.client.widget.PaperShadow;
+
+import org.fusesource.restygwt.client.Method;
+import org.fusesource.restygwt.client.MethodCallback;
 
 /**
  * Copyright 2015 Guillaume Rebesche
@@ -20,20 +25,31 @@ import com.vaadin.components.gwt.polymer.client.widget.PaperShadow;
  * the License.
  */
 public class Home {
-  public static void go(HasWidgets container) {
-
+  public static void go(final HasWidgets container) {
     container.clear();
-
-
-    PaperShadow paperShadow = new PaperShadow();
-    paperShadow.setZ(2);
-    CoreToolbar coreToolbar = new CoreToolbar("Home !");
-    paperShadow.add(coreToolbar);
 
     PaperButton button = new PaperButton("button on Home!");
     button.setRaised(true);
-
-    container.add(paperShadow);
+    button.getElement().getStyle().setBackgroundColor("#4285f4");
+    button.getElement().getStyle().setColor("#FFFFFF");
     container.add(button);
+
+    button.addClickHandler(new ClickHandler() {
+      public void onClick(ClickEvent event) {
+        API.getBeesEventAPI().getEvent(123L, new MethodCallback<BeesEventDTO>() {
+          public void onFailure(Method method, Throwable exception) {
+
+          }
+
+          public void onSuccess(Method method, BeesEventDTO response) {
+            container.add(new Label(response.getName()));
+          }
+        });
+      }
+    });
+
+    HomeView homeView = new HomeView();
+    homeView.setName("My span");
+    container.add(homeView.asWidget());
   }
 }
